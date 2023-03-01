@@ -17,6 +17,8 @@
     "react-bootstrap": "^2.7.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
+    "react-spotify-embed": "^2.0.3",
+    "react-spotify-web-playback": "^0.13.1",
     "swiper": "^8.4.6"
   },
   "devDependencies": {

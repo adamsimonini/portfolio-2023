@@ -22,13 +22,11 @@ function Header() {
 				<Navbar />
 				<div className="wrapper flex justify-between items-center h-screen w-full px-20 lg:justify-center lg:px-6">
 					<div className="content lg:text-center">
-						<div className="btn py-3">
-							<button className=" border-2 border-[#b0aaaa] font-bold text-white bg-[linear-gradient(90deg,#b004b0,#38097a)] p-4 rounded-2xl">Welcome to my Portfolio</button>
-						</div>
 						<h1 className="text-white text-5xl font-bold">Hi, I'm Adam</h1>
-						<p className="text-white py-4 max-w-lg ">Lorem ipsum dolor sit amet consectetur adipisicing elit. In qui impedit sunt, est molestiae ullam. Saepe voluptatum ducimus adipisci pariatur. adipisicing elit. In qui impedit ipsum dolor sit amet consectetur</p>
+						<p className="text-white py-4 max-w-lg">I'm a fullstack developer working out of my hometown of Toronto, Canada. I'm most familiar with JavaScript and Python. Recently, I started using Linux (Ubuntu) as my daily driver, and there is a lot to love.</p>
+						<p className="text-white py-4 max-w-lg">My hobbies include boxing, gaming, latin dancing, and teaching. You're welcome to connect with me on LinkedIn or GitHub.</p>
 						<button className="  text-white text-2xl">
-							Let's Connect <i className="fa-solid fa-arrow-right text-lg  p-[2px] "></i>{" "}
+							Find me on GitHub <i className="fa-solid fa-arrow-right text-lg  p-[2px] "></i>{" "}
 						</button>
 					</div>
 					<div className={planeClassName}>
@@ -38,6 +36,7 @@ function Header() {
 						<img className="w-96 ast-img" src={logo1} alt="" />
 					</div>
 				</div>
+				<iframe id="spotify-frame" src="https://open.spotify.com/embed/playlist/0CFuMybe6s77w6QQrJjW7d?utm_source=generator" width="25%" height="300" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 			</div>
 		</>
 	);
