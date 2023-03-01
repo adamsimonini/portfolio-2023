@@ -1,0 +1,90 @@
+swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: black;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-box:hover .p {
+	top: 0;
+}
+
+.p {
+	transition: 0.5s all;
+}
+
+.plane-right {
+	position: absolute;
+	left: -200px;
+	animation: plane-right 5s 1 alternate linear;
+	-webkit-animation: plane-right 5s 1 alternate linear;
+	transform: rotate(10deg);
+	width: 100%;
+}
+
+.plane-left {
+	position: absolute;
+	left: -200px;
+	animation: plane-left 5s 1 alternate linear;
+	-webkit-animation: plane-left 5s 1 alternate linear;
+	transform: scaleX(-1) rotate(-20deg);
+	-webkit-transform: scaleX(-1) rotate(-20deg);
+	width: 100%;
+}
+
+@keyframes plane-right {
+	0% {
+		left: 100%;
+		top: 45%;
+	}
+
+	100% {
+		left: -10%;
+		top: 10%;
+	}
+}
+
+@keyframes plane-left {
+	0% {
+		left: -10%;
+		top: 10%;
+	}
+
+	100% {
+		left: 100%;
+		top: 45%;
+	}
+}
+
+.bla {
+	transition: transform ease 0.4s;
+	padding: 0 10px;
+}
+.bla:hover {
+	transform: scale(1.3);
+}
