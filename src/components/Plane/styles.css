@@ -1,0 +1,41 @@
+.plane-left {
+  position: absolute;
+  left: -200px;
+  animation: plane-right 5s 1 alternate linear;
+  -webkit-animation: plane-right 5s 1 alternate linear;
+  transform: rotate(10deg);
+  width: 100%;
+}
+
+.plane-right {
+  position: absolute;
+  left: -200px;
+  animation: plane-left 1s 1 linear;
+  animation-duration: 10s;
+  transform: scaleX(-1) rotate(-40deg);
+  width: 100%;
+}
+
+@keyframes plane-right {
+  0% {
+    left: 100%;
+    top: 45%;
+  }
+
+  100% {
+    left: -10%;
+    top: 10%;
+  }
+}
+
+@keyframes plane-left {
+  0% {
+    left: -10%;
+    top: 10%;
+  }
+
+  100% {
+    left: 100%;
+    top: 45%;
+  }
+}
