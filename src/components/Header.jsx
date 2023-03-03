@@ -1,24 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Plane from "@components/Plane/Plane.jsx";
-import logo1 from "@images/plane-1.svg";
 import bg from "@images/city-dusk.svg";
 import Navbar from "./Navbar";
 import "../styles.css";
 import AudiPlayer from "./AudioPlayer/AudioPlayer";
 
-let flyRight = Math.random() < 0.5;
-
-let planeClassName = "image lg:hidden w-[100px] flex";
-
-// planeClassName += " plane-right";
-
-planeClassName = flyRight
-  ? (planeClassName += " plane-right")
-  : (planeClassName += " plane-left");
-
-console.log(`flyRight: ${flyRight}`);
-
 function Header() {
+  const [planeState, setPlaneState] = useState([Plane]);
+
+  // function delay(i) {
+  //   setTimeout(() => {
+  //     console.log(array[i]);
+  //   }, 1000);
+  // }
+
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(planeState);
+      setPlaneState([...planeState, Plane]);
+    }, 1000);
+  });
+
+  // useEffect(() => {
+  // });
+
+  // const timer = (miliseconds) => {
+  //   setTimeout(() => {
+  //     return false;
+  //   }, miliseconds);
+  // };
+
+  // const changePlaneState = async () => {
+  //   let i = 0;
+  //   while (i < 10) {
+  //     // setPlanes((planes) => [...planes, Plane]);
+  //     setPlaneState((planeState) => {
+  //       name: "Detroit";
+  //     });
+  //     i++;
+  //     await timer(1000);
+  //   }
+  // };
+
+  // setTimeout(() => {
+  //   console.log(`${planeState}`);
+  //   setPlaneState((planeState) => {
+  //     name: "Detroit";
+  //   });
+  // }, 2000);
+
+  // changePlaneState();
   return (
     <>
       <div
@@ -45,7 +76,10 @@ function Header() {
               <i className="fa-solid fa-arrow-right text-lg  p-[2px] "></i>{" "}
             </button>
           </div>
-          <Plane />
+          {planeState.map((plane, i) => (
+            <div key={i}>{plane()}</div>
+          ))}
+          {/* <Plane /> */}
         </div>
         <AudiPlayer />
       </div>

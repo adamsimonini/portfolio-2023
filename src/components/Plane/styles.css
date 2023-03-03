@@ -1,22 +1,22 @@
-.plane-left {
+.plane {
   position: absolute;
-  left: -200px;
-  animation: plane-right 5s 1 alternate linear;
-  -webkit-animation: plane-right 5s 1 alternate linear;
-  transform: rotate(10deg);
+  left: -300px;
   width: 100%;
 }
 
 .plane-right {
-  position: absolute;
-  left: -200px;
-  animation: plane-left 1s 1 linear;
-  animation-duration: 10s;
-  transform: scaleX(-1) rotate(-40deg);
-  width: 100%;
+  animation-name: fly-left;
+  transform: rotate(-30deg);
+  animation-timing-function: linear;
 }
 
-@keyframes plane-right {
+.plane-left {
+  animation-name: fly-right;
+  transform: scaleX(-1) rotate(-30deg);
+  animation-timing-function: linear;
+}
+
+@keyframes fly-right {
   0% {
     left: 100%;
     top: 45%;
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes plane-left {
+@keyframes fly-left {
   0% {
     left: -10%;
     top: 10%;
