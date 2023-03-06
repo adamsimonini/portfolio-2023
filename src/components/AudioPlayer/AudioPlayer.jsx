@@ -1,12 +1,15 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import "./styles.css";
+
+// PLAYLIST
 import DamnFineCoffee from "@audio/mtbrd - Damn Fine Coffee.mp3";
 import Still from "@audio/Idealism - Still.mp3";
 import AutumnHere from "@audio/Luffmoor - Autumn, Here.mp3";
-import "./styles.css";
+import HeySeptemnber from "@audio/Harris Cole - Hey, September.mp3";
 
-const playlist = [DamnFineCoffee, Still, AutumnHere];
+const playlist = [DamnFineCoffee, Still, AutumnHere, HeySeptemnber];
 
 function Player() {
   // on page load set the track to a random one
