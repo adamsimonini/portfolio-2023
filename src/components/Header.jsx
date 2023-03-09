@@ -1,26 +1,58 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Plane from "@components/Plane/Plane.jsx";
-// import bg from "@images/city-dusk.svg";
+import {
+  planeStyles,
+  planeClassName,
+  PlaneClass,
+} from "@components/Plane/script.js";
+// import {Plane} from "@components/Plane/Plane.jsx";
+import bg from "@images/city-dusk.svg";
 // import bg from "@images/miami.jpg";
-import bg from "@images/howling-space.jpg";
+// import bg from "@images/howling-space.jpg";
 // import bg from "@images/forest-fox.jpg";
 import Navbar from "./Navbar";
 import "../styles.css";
 import AudiPlayer from "./AudioPlayer/AudioPlayer";
 
 function Header() {
-  const [planeState, setPlaneState] = useState([Plane]);
+  const newPlane = new PlaneClass({
+    // todo, consider moving randomization into the PlaneClass itself
+    name: "plane",
+    direction:
+      PlaneClass.directions[
+        Math.floor(Math.random() * PlaneClass.directions.length)
+      ],
+    speed: Math.floor(
+      Math.random() *
+        (PlaneClass.maxFlightTime - PlaneClass.minFlightTime + 1) +
+        PlaneClass.minFlightTime
+    ),
+  });
+  const [planesArrState, setPlanesArrsState] = useState([newPlane]);
+
+  // let planeArrRef = useRef([]);
 
   // TODO: this is not a reliable way of solving the infinite plane component issue. I would rather have each plane instance itself decide for itself when it should be destroyed, and then have it execute that logic itself
   useEffect(() => {
     setTimeout(() => {
-      console.log(planeState);
-      setPlaneState([...planeState, Plane]);
-      if (planeState.length > 5) {
-        console.log(planeState.length);
-        setPlaneState([]);
-      }
-    }, 1000);
+      console.log(planesArrState);
+      const newPlane = new PlaneClass({
+        // todo, consider moving randomization into the PlaneClass itself
+        name: "plane",
+        direction:
+          PlaneClass.directions[
+            Math.floor(Math.random() * PlaneClass.directions.length)
+          ],
+        speed: Math.floor(
+          Math.random() *
+            (PlaneClass.maxFlightTime - PlaneClass.minFlightTime + 1) +
+            PlaneClass.minFlightTime
+        ),
+      });
+      newPlane.width = `${Math.floor(3000 / newPlane.speed)}px`;
+
+      setPlanesArrsState([...planesArrState, newPlane]);
+    }, 25000);
   });
 
   return (
@@ -48,9 +80,26 @@ function Header() {
               <i className="fa-solid fa-arrow-right text-lg  p-[2px] "></i>{" "}
             </button>
           </div>
-          {planeState.map((plane, i) => (
-            <div key={i}>{plane()}</div>
+          {planesArrState.map((plane, i) => (
+            <div key={i}>
+              <Plane
+                planeClassName={planeClassName(plane)}
+                planeStyles={planeStyles(plane)}
+              />
+            </div>
           ))}
+          {/* <Plane
+            planeClassName={planeClassName(newPlane)}
+            planeStyles={planeStyles(newPlane)}
+          /> */}
+          {/* <Plane
+            planeClassName={planeClassName(newPlane)}
+            planeStyles={planeStyles(newPlane)}
+          />
+          <Plane
+            planeClassName={planeClassName(newPlane)}
+            planeStyles={planeStyles(newPlane)}
+          /> */}
           {/* <Plane /> */}
         </div>
         <AudiPlayer />

@@ -1,54 +1,50 @@
 import React from "react";
-// import PlaneImage from "@images/plane-1.svg";
-// import PlaneImage from "@images/star.png";
-import PlaneImage from "@images/white-star.png";
-import { PlaneClass } from "./script.js";
+import PlaneImage from "@images/plane-1.svg";
 import "./styles.css";
+import styled, { css, keyframes } from "styled-components";
 
-// flight times are in seconds
-const minFlightTime = 5;
-const maxFlightTime = 15;
+const flyingKeyframe = keyframes`
+  0% {
+    left: 100%;
+    top: 45%;
+  }
 
-const planeVariables = {
-  directions: ["right", "left"],
-  speed: Math.floor(
-    Math.random() * (maxFlightTime - minFlightTime + 1) + minFlightTime
-  ),
-};
+  100% {
+    left: -10%;
+    top: 10%;
+  }
+}
+`;
 
-// since the speed should be affected by distance via motion parallax, and quicker speeds are a lower number (number of seconds it takes for the plane to travel a given route), we have to divide the speed from a standard number, to make bigger objects faster and smaller objects slower
-// planeVariables.size = `${2000 / planeVariables.speed}px`;
-planeVariables.size = `${100 / planeVariables.speed}px`;
+const flightAnimation = (props) =>
+  css`
+    ${flyingKeyframe} ${props.animationLength} 4s linear infinite;
+  `;
 
-const newPlane = new PlaneClass({
-  name: "plane",
-  direction:
-    planeVariables.directions[
-      Math.floor(Math.random() * planeVariables.directions.length)
-    ],
-  size: `${planeVariables.size}px`,
-  speed: planeVariables.speed,
-});
+const FlightPath = styled.div`
+  animation: ${flightAnimation};
+`;
 
-console.log(newPlane);
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 450px;
+`;
 
-let planeStyles = {
-  animationName: `fly-${newPlane.direction}`,
-  animationIterationCount: 1,
-  animationDuration: `${planeVariables.speed}s`,
-  width: planeVariables.size,
-};
-
-let planeClassName = `image plane plane-${newPlane.direction} w-[100px] flex rotating`;
-
-function Plane() {
+function Plane(props) {
   return (
-    <>
-      <div className={planeClassName} style={planeStyles}>
-        <img className="ast-img rotating" src={PlaneImage} alt="" />
+    <FlightPath>
+      <div className={props.planeClassName} style={props.planeStyles}>
+        <img className="ast-img" src={PlaneImage} alt="" />
       </div>
-    </>
+    </FlightPath>
   );
 }
 
-export default Plane;
+export default React.memo(Plane);
+
+// Prevent unnecessary re-rendering: https://stackoverflow.com/questions/72202892/how-can-i-delete-an-item-from-list-without-re-rendering-undeleted-items
+
+// https://styled-components.com/
