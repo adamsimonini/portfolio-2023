@@ -21,6 +21,10 @@ export default defineConfig({
         find: "@images",
         replacement: path.resolve(__dirname, "src/assets/images"),
       },
+      {
+        find: "@ifos",
+        replacement: path.resolve(__dirname, "src/IFOs"),
+      },
     ],
   },
 });
