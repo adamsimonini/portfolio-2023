@@ -70,8 +70,8 @@ function WelcomePage() {
         className=" bg-center bg-cover bg-no-repeat h-screen flex flex-col "
       >
         <Navbar />
-        <div className="wrapper flex justify-between items-center h-screen w-full px-20 lg:justify-center lg:px-6">
-          <div className="bio content lg:text-center">
+        <div className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
+          <div className="bio content">
             <h1 className="text-5xl font-bold">Welcome</h1>
             <p className="py-4 max-w-lg">
               I'm a full stack developer working out of my hometown of Toronto,

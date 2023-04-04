@@ -53,6 +53,10 @@ body {
   color: white;
 }
 
+.bio {
+  padding-top: 150px;
+}
+
 @media only screen and (max-width: 1400px) {
   #welcome {
     color: black;
