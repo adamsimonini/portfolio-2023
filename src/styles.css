@@ -55,11 +55,17 @@ body {
 }
 
 .bio {
-  padding-top: 150px;
+  margin-top: 150px;
+  z-index: 99;
 }
 
 @media only screen and (max-width: 1400px) {
   #welcome {
     color: black;
+  }
+  #bio-inner {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
   }
 }

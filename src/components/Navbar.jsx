@@ -21,11 +21,14 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbarcon flex justify-between items-center px-20 py-6 bg-transparent z-40 text-white lg:px-6 fixed w-full">
+      <div
+        className="navbarcon flex justify-between items-center px-20 py-6 bg-transparent z-40 text-white lg:px-6 fixed w-full"
+        style={{ zIndex: 100 }}
+      >
         <h1 className="text-4xl  font-bold ">Adam Simonini</h1>
 
         <nav
-          className={` flex justify-center items-center gap-x-10 lg:fixed lg:top-0 -z-20  lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0 h-full lg:items-start  lg:pl-6  cursor-pointer lg:pt-20`}
+          className={`flex justify-center items-center gap-x-10 lg:hidden lg:fixed lg:top-0 -z-20  lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0 h-full lg:items-start  lg:pl-6  cursor-pointer lg:pt-20`}
         >
           <div className="icon text-lg flex gap-4  lg:gap-8 lg:my-10">
             <a href="https://www.linkedin.com/in/adamsimonini/" target="_blank">

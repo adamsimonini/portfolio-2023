@@ -71,23 +71,25 @@ function WelcomePage() {
       >
         <Navbar />
         <main className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
-          <div className="bio content">
-            {/* <h1 className="text-5xl font-bold">Welcome</h1> */}
-            <p className="py-4 max-w-lg">
-              I'm a full stack developer working out of my hometown of Toronto,
-              Canada. I have been coding for 6+ years, and I'm most familiar
-              with JavaScript and Python.
-            </p>
-            <p className="py-4 max-w-lg">
-              Listen to some chillhop and checkout my portfolio below.
-            </p>
-            <a href="https://github.com/adamsimonini" target="_blank">
-              <Button primary className="text-2xl">
-                Find me on GitHub{" "}
-                <i className="fa-solid fa-external-link text-lg  p-[2px] "></i>{" "}
-              </Button>
-            </a>
-          </div>
+          <section className="bio content">
+            <div id="bio-inner">
+              {/* <h1 className="text-5xl font-bold">Welcome</h1> */}
+              <p className="py-4 max-w-lg">
+                I'm a full stack developer working out of my hometown of
+                Toronto, Canada. I have been coding for 6+ years, and I'm most
+                familiar with JavaScript and Python.
+              </p>
+              <p className="py-4 max-w-lg">
+                Listen to some chillhop and checkout my portfolio below.
+              </p>
+              <a href="https://github.com/adamsimonini" target="_blank">
+                <Button primary className="text-2xl">
+                  Find me on GitHub{" "}
+                  <i className="fa-solid fa-external-link text-lg  p-[2px] "></i>{" "}
+                </Button>
+              </a>
+            </div>
+          </section>
           {planesArrState.map((plane, i) => (
             <div key={i}>
               <Plane

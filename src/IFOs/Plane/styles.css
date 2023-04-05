@@ -2,6 +2,7 @@
   position: absolute;
   left: -300px;
   max-width: 250px;
+  z-index: 1;
 }
 
 .plane-right {
