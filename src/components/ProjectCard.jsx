@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
-import vueHousingImg from "../assets/images/portfolio-pieces/vue-housing.png";
+import placeholder from "@images/portfolio-pieces/placeholder.png";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import useAssets from "@/compostables/useAssets";
 
 function ProjectCard({ project }) {
   const [image, setImage] = useState(null);
@@ -12,7 +11,7 @@ function ProjectCard({ project }) {
     const loadImage = async () => {
       try {
         const importedImage = await import(
-          `../assets/images/portfolio-pieces/${project.photoName}.png`
+          `@images/portfolio-pieces/${project.photoName.toLowerCase()}.png`
         );
         setImage(importedImage.default);
       } catch (error) {
@@ -40,7 +39,7 @@ function ProjectCard({ project }) {
           loading="lazy"
           variant="top"
           // fallback image if none loads
-          src={`${image ? image : vueHousingImg}`}
+          src={`${image ? image : placeholder}`}
           // src={`${useAssets(project.photoName)}`}
           alt={project.name}
           style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
