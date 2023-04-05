@@ -12,7 +12,7 @@ function ProjectCard({ project }) {
     const loadImage = async () => {
       try {
         const importedImage = await import(
-          `../assets/images/portfolio-pieces/${project.photoName}`
+          `../assets/images/portfolio-pieces/${project.photoName}.png`
         );
         setImage(importedImage.default);
       } catch (error) {
@@ -39,6 +39,7 @@ function ProjectCard({ project }) {
         <LazyLoadImage
           loading="lazy"
           variant="top"
+          // fallback image if none loads
           src={`${image ? image : vueHousingImg}`}
           // src={`${useAssets(project.photoName)}`}
           alt={project.name}
