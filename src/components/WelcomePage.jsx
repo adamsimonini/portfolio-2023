@@ -70,21 +70,19 @@ function WelcomePage() {
         className=" bg-center bg-cover bg-no-repeat h-screen flex flex-col "
       >
         <Navbar />
-        <div className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
+        <main className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
           <div className="bio content">
-            <h1 className="text-5xl font-bold">Welcome</h1>
+            {/* <h1 className="text-5xl font-bold">Welcome</h1> */}
             <p className="py-4 max-w-lg">
               I'm a full stack developer working out of my hometown of Toronto,
-              Canada. I'm most familiar with JavaScript and Python. I have been
-              coding for 6+ years.
+              Canada. I have been coding for 6+ years, and I'm most familiar
+              with JavaScript and Python.
             </p>
             <p className="py-4 max-w-lg">
-              When I'm not coding you can find me boxing, gaming, latin dancing,
-              and teaching. You're welcome to connect with me on LinkedIn or
-              GitHub.
+              Listen to some chillhop and checkout my portfolio below.
             </p>
             <a href="https://github.com/adamsimonini" target="_blank">
-              <Button primary className="text-2xl ">
+              <Button primary className="text-2xl">
                 Find me on GitHub{" "}
                 <i className="fa-solid fa-external-link text-lg  p-[2px] "></i>{" "}
               </Button>
@@ -98,7 +96,7 @@ function WelcomePage() {
               />
             </div>
           ))}
-        </div>
+        </main>
         <AudioPlayer />;
       </div>
     </>

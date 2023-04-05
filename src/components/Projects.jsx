@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import img1 from "../assets/images/project-img1.png";
 import img2 from "../assets/images/project-img2.png";
 import img3 from "../assets/images/project-img3.png";
+import projectData from "@/projects";
 
 import "../styles.css";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
-  const [durum, setDurum] = useState(1);
-
+  console.log(projectData);
   const projects = [
     {
       id: 1,
@@ -50,20 +50,20 @@ function Projects() {
 
   return (
     <>
-      <div id="projects" className="project">
+      <section id="projects" className="project">
         <h1 className="text-center text-4xl font-bold py-6">Projects</h1>
-        <p className="text-center max-w-[1000px] lg:px-6 mx-auto text-[#939191]">
-          lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur,
-          cupiditate! Molestiae placeat architecto nihil obcaecati illum minima
-          incidunt dolores? Officia consectetur optio non totam cum eos soluta
-          ipsa et quod.
+        <p className="max-w-[1000px] lg:px-6 mx-auto">
+          Here is a sample of some of the projects I have worked on, either
+          professionally or as a hobby. Please note that all projects are hosted
+          for free on Netlify, and as such they might take a few seconds to
+          load.
         </p>
         <div className="grid grid-cols-3 p-10 gap-8 lg:grid-cols-2 tl:grid-cols-1 ">
-          {projects.map((item, i) => (
-            <ProjectCard key={i} item={item} />
+          {projectData.map((project, i) => (
+            <ProjectCard key={i} project={project} />
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 }
