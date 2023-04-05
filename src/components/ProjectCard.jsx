@@ -39,7 +39,7 @@ function ProjectCard({ project }) {
         <LazyLoadImage
           loading="lazy"
           variant="top"
-          src={`${image}`}
+          src={`${image ? image : vueHousingImg}`}
           // src={`${useAssets(project.photoName)}`}
           alt={project.name}
           style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
