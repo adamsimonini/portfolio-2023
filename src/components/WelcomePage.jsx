@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Plane from "@ifos/Plane/Plane.jsx";
 import { planeStyles, planeClassName, PlaneClass } from "@ifos/Plane/script.js";
 // import {Plane} from "@components/Plane/Plane.jsx";
-import bg from "@images/city-dusk.svg";
+// import bg from "@images/city-dusk.svg";
 import AudioPlayer from "@components/AudioPlayer/AudioPlayer";
 import styled from "styled-components";
 
 // import bg from "@images/miami.jpg";
-// import bg from "@images/howling-space.jpg";
+import bg from "@images/howling-space.jpg";
 // import bg from "@images/forest-fox.jpg";
 import Navbar from "./Navbar";
 import "../styles.css";
@@ -99,7 +99,7 @@ function WelcomePage() {
             </div>
           ))}
         </main>
-        <AudioPlayer />;
+        <AudioPlayer />
       </div>
     </>
   );
