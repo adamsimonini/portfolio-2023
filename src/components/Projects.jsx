@@ -8,46 +8,6 @@ import "../styles.css";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
-  console.log(projectData);
-  const projects = [
-    {
-      id: 1,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img1,
-    },
-    {
-      id: 2,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img2,
-    },
-    {
-      id: 3,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img3,
-    },
-    {
-      id: 4,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img2,
-    },
-    {
-      id: 5,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img3,
-    },
-    {
-      id: 6,
-      title: "Business Startup",
-      description: "Design & Development",
-      img: img1,
-    },
-  ];
-
   return (
     <>
       <section id="projects" className="project">
@@ -59,8 +19,8 @@ function Projects() {
           load.
         </p>
         <div className="grid grid-cols-3 p-10 gap-8 lg:grid-cols-2 tl:grid-cols-1 ">
-          {projectData.map((project, i) => (
-            <ProjectCard key={i} project={project} />
+          {projectData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </section>

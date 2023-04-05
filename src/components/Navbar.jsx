@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import "../styles.css";
 
 function Navbar() {
-  const [durum, setDurum] = useState(true);
-  console.log(durum);
-
   window.onscroll = function () {
     scrollFunction();
   };
@@ -29,22 +25,8 @@ function Navbar() {
         <h1 className="text-4xl  font-bold ">Adam Simonini</h1>
 
         <nav
-          className={` flex justify-center items-center gap-x-10 ${
-            durum && "lg:hidden"
-          } lg:fixed lg:top-0 -z-20  lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0 h-full lg:items-start  lg:pl-6  cursor-pointer lg:pt-20`}
+          className={` flex justify-center items-center gap-x-10 lg:fixed lg:top-0 -z-20  lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0 h-full lg:items-start  lg:pl-6  cursor-pointer lg:pt-20`}
         >
-          {/* <ul className=" flex gap-10 text-3xl mr-4 lg:flex-col lg:gap-6 ">
-						<li className="bla">
-							<AnchorLink href="#home">Home</AnchorLink>
-						</li>
-						<li className="bla">
-							<AnchorLink href="#skills">Skills</AnchorLink>
-						</li>
-						<li className="bla">
-							<AnchorLink href="#projects">Projects</AnchorLink>
-						</li>
-					</ul> */}
-
           <div className="icon text-lg flex gap-4  lg:gap-8 lg:my-10">
             <a href="https://www.linkedin.com/in/adamsimonini/" target="_blank">
               <i className="fa-brands fa-linkedin border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
@@ -54,10 +36,7 @@ function Navbar() {
             </a>
           </div>
         </nav>
-        <i
-          onClick={(e) => setDurum(!durum)}
-          className="fa-solid fa-bars hidden lg:block text-2xl cursor-pointer"
-        ></i>
+        <i className="fa-solid fa-bars hidden lg:block text-2xl cursor-pointer"></i>
       </div>
     </>
   );

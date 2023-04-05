@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import vueHousingImg from "../assets/images/portfolio-pieces/vue-housing.png";
 import styled from "styled-components";
 
 function ProjectCard({ project }) {
-  console.log(project);
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const importedImage = await import(
+          `../assets/images/portfolio-pieces/${project.photoName}`
+        );
+        setImage(importedImage.default);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadImage();
+  }, []);
+
   const Button = styled.button`
     background-color: white;
     color: black;
@@ -17,8 +33,8 @@ function ProjectCard({ project }) {
 
   return (
     <>
-      <Card style={{ width: "50px;" }}>
-        <Card.Img variant="top" src={vueHousingImg} />
+      <Card style={{ maxWidth: "50" }}>
+        <Card.Img loading="lazy" variant="top" src={image} alt={project.name} />
         <Card.Body>
           <Card.Title>{project.name}</Card.Title>
           <Card.Text>{project.description}</Card.Text>
