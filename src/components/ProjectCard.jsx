@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import vueHousingImg from "../assets/images/portfolio-pieces/vue-housing.png";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useAssets from "@/compostables/useAssets";
 
 function ProjectCard({ project }) {
   const [image, setImage] = useState(null);
@@ -38,7 +39,8 @@ function ProjectCard({ project }) {
         <LazyLoadImage
           loading="lazy"
           variant="top"
-          src={image}
+          src={`${image}`}
+          // src={`${useAssets(project.photoName)}`}
           alt={project.name}
           style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
         />
