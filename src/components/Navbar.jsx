@@ -6,8 +6,18 @@ function Navbar() {
     scrollFunction();
   };
 
+  // this provides navbar with a black background upon scrolling
   function scrollFunction() {
-    return false;
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      document.querySelector(".navbarcon").style.backgroundColor = "#171717";
+    } else {
+      document.querySelector(".navbarcon").style.backgroundColor =
+        "rgba(0, 0, 0, 0)";
+      document.querySelector(".tl").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    }
   }
 
   return (
