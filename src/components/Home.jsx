@@ -3,7 +3,7 @@ import WelcomePage from "./WelcomePage";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
-import Skills from "./Skills";
+// import Skills from "./Skills";
 
 function Home() {
   return (

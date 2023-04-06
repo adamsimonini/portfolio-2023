@@ -23,6 +23,10 @@ body {
   background: linear-gradient(rgba(17, 28, 47, 1), rgba(0, 0, 0, 1));
 }
 
+#projects .card-body {
+  color: black;
+}
+
 #welcome {
   color: white;
 }
