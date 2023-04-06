@@ -46,5 +46,4 @@ let planeClassName = `image plane plane-${newPlane.direction} w-[100px] flex rot
 export {
   planeStyles,
   StarClass,
-
 }

@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Plane from "@ifos/Plane/Plane.jsx";
 import { planeStyles, planeClassName, PlaneClass } from "@ifos/Plane/script.js";
-// import {Plane} from "@components/Plane/Plane.jsx";
-// import bg from "@images/city-dusk.svg";
 import AudioPlayer from "@components/AudioPlayer/AudioPlayer";
 import styled from "styled-components";
 
+import bg from "@images/howling-space-min.jpg";
 // import bg from "@images/miami.jpg";
-import bg from "@images/howling-space.jpg";
 // import bg from "@images/forest-fox.jpg";
+
 import Navbar from "./Navbar";
 import "../styles.css";
 
@@ -37,8 +36,6 @@ function WelcomePage() {
     ),
   });
   const [planesArrState, setPlanesArrsState] = useState([newPlane]);
-
-  // let planeArrRef = useRef([]);
 
   // TODO: this is not a reliable way of solving the infinite plane component issue. I would rather have each plane instance itself decide for itself when it should be destroyed, and then have it execute that logic itself
   useEffect(() => {
@@ -87,6 +84,8 @@ function WelcomePage() {
                   Find me on GitHub{" "}
                   <i className="fa-solid fa-external-link text-lg  p-[2px] "></i>{" "}
                 </Button>
+                {/* Test of glowing button */}
+                {/* <dvi class="glowing-btn">Hello</dvi> */}
               </a>
             </div>
           </section>
