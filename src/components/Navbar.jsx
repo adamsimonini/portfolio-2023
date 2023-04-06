@@ -6,6 +6,8 @@ function Navbar() {
     scrollFunction();
   };
 
+  const [transparency, setTransparency] = useState("bg-transparent");
+
   // this provides navbar with a black background upon scrolling
   function scrollFunction() {
     if (
@@ -23,13 +25,13 @@ function Navbar() {
   return (
     <>
       <div
-        className="navbarcon flex justify-between items-center px-20 py-6 bg-transparent z-40 text-white lg:px-6 fixed w-full"
+        className="navbarcon flex justify-between items-center px-20 py-6 z-40 text-white lg:px-6 fixed w-full"
         style={{ zIndex: 100 }}
       >
         <h1 className="text-4xl  font-bold ">Adam Simonini</h1>
 
         <nav
-          className={`flex justify-center items-center gap-x-10 lg:hidden sm:fixed lg:top-0 -z-20  lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0  cursor-pointer `}
+          className={`flex justify-center items-center gap-x-10 lg:hidden sm:fixed lg:top-0 -z-20 lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0  cursor-pointer`}
         >
           <div className="icon text-lg flex gap-4 lg:gap-8 lg:my-10">
             <a href="https://www.linkedin.com/in/adamsimonini/" target="_blank">
