@@ -6,7 +6,7 @@ const projects = [
     githubLink: "https://github.com/adamsimonini/vue-housing",
     photoName: "vue-housing",
     description:
-      "Prototype of an electronic version of the Ontario's officla Residential Tenancy Agreement form",
+      "This app is a prototype for an electronic version of the Ontario's officla Residential Tenancy Agreement form. Written in Vue.js, it utilizes the Vue router and swappable components to dynamically generate form pages.",
   },
   {
     id: 2,
@@ -17,6 +17,15 @@ const projects = [
     photoName: "covid-trends",
     description:
       "COVIDTrends is a tool that provides summary data about COVID‑19 in your area. When you search by municipality (city, town), or by the first 3 characters of your postal code, data from your health region will appear.",
+  },
+  {
+    id: 4,
+    name: "Pokemon Battle",
+    liveLink: "https://replit.com/@ajsim/pokemon-battle",
+    githubLink: "https://github.com/adamsimonini/pokemon-battle",
+    photoName: "pokemon-battle",
+    description:
+      "An interative terminal game written in Python where players choose a team of 3 pokemon and faceoff against a computer opponent. Pokemon speed, attack, and HP stats are randomized by up to 30% (up or down) from base stats on pokemon instantiation, so no two games are alike.",
   },
   {
     id: 3,
