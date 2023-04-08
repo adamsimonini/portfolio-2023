@@ -1,0 +1,35 @@
+# This automatic labeling happens only at the file-level. Other labels may be added manually to better specify the nature of the PR
+
+# https://github.com/marketplace/actions/labeler
+
+# explicit file: fileName.extention
+# explicit dir, any file at that dir: phacend/itap/*
+# explicit dir, any file of any child dir: phacend/itap/**/*
+# explicit dir, only files of a certain time at any child dir: phacend/itap/**/*.html
+# any dir with explicit child dir, and any file within that child dir: **/jinja2/*
+
+"Files: Docs":
+  - "*.md"
+  - "docs/*"
+
+# "Files: Tests":
+
+# "Files: Migrations":
+
+"Files: Dependencies":
+  - "package.json"
+
+"Files: GitHub":
+  - .github/*
+  - .github/**/*
+
+# "Files: Models":
+
+# "Files: Seeds":
+
+"Area: Frontend 🎨":
+  - "src/*"
+  - "src/**/*"
+# "Area: Backend 💾":
+#   - "server/*"
+#   - "server/**/*"
