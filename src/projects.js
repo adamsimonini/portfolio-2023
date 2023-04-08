@@ -29,6 +29,14 @@ const projects = [
   },
   {
     id: 3,
+    name: "Personal Website",
+    liveLink: "adamsimonini.ca",
+    githubLink: "https://github.com/adamsimonini/portfolio-2023",
+    photoName: "adam-simonini",
+    description: "My personal and portfolio website",
+  },
+  {
+    id: 4,
     name: "Placeholder",
     liveLink:
       "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
