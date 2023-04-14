@@ -16,6 +16,7 @@ function Projects() {
         for free on Netlify, and as such they might take a few seconds to load.
       </p>
 
+      <h1>OMG</h1>
       <Container id="test">
         <Row>
           {projectData.map((project) => (
