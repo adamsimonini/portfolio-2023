@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import img1 from "../assets/images/project-img1.png";
-import img2 from "../assets/images/project-img2.png";
-import img3 from "../assets/images/project-img3.png";
 import projectData from "@/projects";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 import "../styles.css";
 import ProjectCard from "./ProjectCard";
@@ -16,11 +15,14 @@ function Projects() {
         professionally or as a hobby. Please note that all projects are hosted
         for free on Netlify, and as such they might take a few seconds to load.
       </p>
-      <div className="grid grid-cols-3 p-10 gap-8 lg:grid-cols-1 tl:grid-cols-1 ">
-        {projectData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+
+      <Container id="test">
+        <Row>
+          {projectData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </Row>
+      </Container>
     </section>
   );
 }

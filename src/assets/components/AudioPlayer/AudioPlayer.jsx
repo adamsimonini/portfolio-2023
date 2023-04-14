@@ -40,8 +40,8 @@ function Player() {
   return (
     <AudioPlayer
       className="sticky"
-      autoPlay={true}
-      volume="0.20"
+      autoPlay={false}
+      volume="0.00"
       src={playlist[currentTrack]}
       //   onPlay={(e) => console.log("onPlay")}
       showSkipControls
