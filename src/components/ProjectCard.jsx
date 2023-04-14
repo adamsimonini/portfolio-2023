@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
 import placeholder from "@images/portfolio-pieces/placeholder.png";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Col from "react-bootstrap/Col";
 
 function ProjectCard({ project }) {
   const [image, setImage] = useState(null);
@@ -33,8 +33,15 @@ function ProjectCard({ project }) {
   `;
 
   return (
-    <>
-      <Card style={{ maxWidth: "400px" }}>
+    <Col xs={12} md={6} lg={4} className="card">
+      <div
+        style={{
+          maxWidth: "500px",
+          height: "600px",
+          margin: "10px 0",
+          alignItems: "center",
+        }}
+      >
         <LazyLoadImage
           loading="lazy"
           variant="top"
@@ -42,11 +49,14 @@ function ProjectCard({ project }) {
           src={`${image ? image : placeholder}`}
           // src={`${useAssets(project.photoName)}`}
           alt={project.name}
-          style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
+          style={{ minWidth: "300px", height: "300px", borderRadius: "10px" }}
         />
-        <Card.Body>
-          <Card.Title>{project.name}</Card.Title>
-          <Card.Text>{project.description}</Card.Text>
+
+        <div style={{ textAlign: "left" }}>
+          <h3>{project.name}</h3>
+          <span>{project.description}</span>
+        </div>
+        <div style={{ positon: "relative" }}>
           <a href={project.githubLink} target="_blank">
             <Button primary className="text-2xl br-10">
               See the code
@@ -57,9 +67,9 @@ function ProjectCard({ project }) {
               See the app
             </Button>
           </a>
-        </Card.Body>
-      </Card>
-    </>
+        </div>
+      </div>
+    </Col>
   );
 }
 
