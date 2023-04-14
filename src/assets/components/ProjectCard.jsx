@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import placeholder from "@images/portfolio-pieces/placeholder.png";
 import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Col from "react-bootstrap/Col";
 
 function ProjectCard({ project }) {
   const [image, setImage] = useState(null);
@@ -33,7 +34,7 @@ function ProjectCard({ project }) {
   `;
 
   return (
-    <>
+    <Col xs={12} md={12} xl={3}>
       <Card style={{ maxWidth: "400px" }}>
         <LazyLoadImage
           loading="lazy"
@@ -59,7 +60,7 @@ function ProjectCard({ project }) {
           </a>
         </Card.Body>
       </Card>
-    </>
+    </Col>
   );
 }
 
