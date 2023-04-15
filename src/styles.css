@@ -43,7 +43,7 @@ body {
 
 .card {
   box-shadow: 1px 1px 15px 5px rgba(255, 255, 255, 0.39);
-  background-color: black;
+  background-color: transparent;
   border-radius: 10px;
   padding: 20px 20px;
   row-gap: 20px;
