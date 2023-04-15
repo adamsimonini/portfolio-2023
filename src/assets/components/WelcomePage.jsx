@@ -4,7 +4,7 @@ import { planeStyles, planeClassName, PlaneClass } from "@ifos/Plane/script.js";
 import AudioPlayer from "@components/AudioPlayer/AudioPlayer";
 import styled from "styled-components";
 
-import bg from "@images/howling-space-min.jpg";
+// import bg from "@images/howling-space-min.jpg";
 // import bg from "@images/miami.jpg";
 // import bg from "@images/forest-fox.jpg";
 
@@ -61,7 +61,7 @@ function WelcomePage() {
 
   return (
     <>
-      <div
+      {/* <div
         id="welcome"
         style={{ backgroundImage: `url(${bg})` }}
         className=" bg-center bg-cover bg-no-repeat h-screen flex flex-col "
@@ -99,7 +99,7 @@ function WelcomePage() {
           ))}
         </main>
         <AudioPlayer />
-      </div>
+      </div> */}
     </>
   );
 }

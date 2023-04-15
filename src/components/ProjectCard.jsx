@@ -33,37 +33,46 @@ function ProjectCard({ project }) {
   `;
 
   return (
-    <Col xs={12} md={6} lg={4} className="card">
+    <Col xs={12} md={12} lg={6} xl={4} className="card-column">
       <div
         style={{
           maxWidth: "500px",
-          height: "600px",
-          margin: "10px 0",
           alignItems: "center",
         }}
+        className="card card-grid"
       >
-        <LazyLoadImage
-          loading="lazy"
-          variant="top"
-          // fallback image if none loads
-          src={`${image ? image : placeholder}`}
-          // src={`${useAssets(project.photoName)}`}
-          alt={project.name}
-          style={{ minWidth: "300px", height: "300px", borderRadius: "10px" }}
-        />
+        <div className="card-image">
+          <LazyLoadImage
+            loading="lazy"
+            variant="top"
+            // fallback image if none loads
+            src={`${image ? image : placeholder}`}
+            // src={`${useAssets(project.photoName)}`}
+            alt={project.name}
+            style={{
+              height: "300px",
+              borderRadius: "10px",
+              maxWidth: "100%",
+            }}
+          />
+        </div>
 
-        <div style={{ textAlign: "left" }}>
-          <h3>{project.name}</h3>
+        {/* <div style={{ textAlign: "left" }}> */}
+        <div className="card-title">
+          <h3 style={{ fontSize: "30px" }}>{project.name}</h3>
+        </div>
+        <div className="card-description">
           <span>{project.description}</span>
         </div>
-        <div style={{ positon: "relative" }}>
+        {/* </div> */}
+        <div style={{ positon: "relative" }} className="card-links">
           <a href={project.githubLink} target="_blank">
-            <Button primary className="text-2xl br-10">
+            <Button primary className="text-2xl br-10 m-1">
               See the code
             </Button>
           </a>
           <a href={project.liveLink} target="_blank">
-            <Button primary className="text-2xl br-10">
+            <Button primary className="text-2xl br-10 m-1">
               See the app
             </Button>
           </a>

@@ -36,10 +36,50 @@ body {
   z-index: 99;
 }
 
+.card-column {
+  padding: 0 30px 10px 30px;
+  margin: 10px 0;
+}
+
 .card {
   box-shadow: 1px 1px 15px 5px rgba(255, 255, 255, 0.39);
   background-color: black;
   border-radius: 10px;
+  padding: 20px 20px;
+  row-gap: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 300px 30px 150px 100px;
+  grid-template-areas:
+    "image"
+    "title"
+    "description"
+    "links";
+}
+
+.card-image {
+  grid-area: "image";
+  /* min-width: "300px";
+  height: "300px";
+  border-radius: "10px"; */
+}
+
+.card-title {
+  grid-area: "title";
+  text-align: left;
+  padding: 0 15px;
+}
+
+.card-description {
+  padding: "20px 0";
+  grid-area: "description";
+  text-align: left;
+  padding: 0 15px;
+}
+
+.card-links {
+  grid-area: "links";
 }
 
 @media only screen and (max-width: 1400px) {
