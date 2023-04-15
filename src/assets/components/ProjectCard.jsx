@@ -35,31 +35,33 @@ function ProjectCard({ project }) {
 
   return (
     <Col xs={12} md={12} xl={3}>
-      <Card style={{ maxWidth: "400px" }}>
-        <LazyLoadImage
-          loading="lazy"
-          variant="top"
-          // fallback image if none loads
-          src={`${image ? image : placeholder}`}
-          // src={`${useAssets(project.photoName)}`}
-          alt={project.name}
-          style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
-        />
-        <Card.Body>
-          <Card.Title>{project.name}</Card.Title>
-          <Card.Text>{project.description}</Card.Text>
-          <a href={project.githubLink} target="_blank">
-            <Button primary className="text-2xl br-10">
-              See the code
-            </Button>
-          </a>
-          <a href={project.liveLink} target="_blank">
-            <Button primary className="text-2xl br-10">
-              See the app
-            </Button>
-          </a>
-        </Card.Body>
-      </Card>
+      <div style={{ maxWidth: "400px", padding: "0 10px" }}>
+        <Card style={{ maxWidth: "400px" }}>
+          <LazyLoadImage
+            loading="lazy"
+            variant="top"
+            // fallback image if none loads
+            src={`${image ? image : placeholder}`}
+            // src={`${useAssets(project.photoName)}`}
+            alt={project.name}
+            style={{ maxWidth: "400px", height: "300px", borderRadius: "10px" }}
+          />
+          <Card.Body>
+            <Card.Title>{project.name}</Card.Title>
+            <Card.Text>{project.description}</Card.Text>
+            <a href={project.githubLink} target="_blank">
+              <Button primary className="text-2xl br-10">
+                See the code
+              </Button>
+            </a>
+            <a href={project.liveLink} target="_blank">
+              <Button primary className="text-2xl br-10">
+                See the app
+              </Button>
+            </a>
+          </Card.Body>
+        </Card>
+      </div>
     </Col>
   );
 }

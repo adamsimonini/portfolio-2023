@@ -28,7 +28,7 @@ function Navbar() {
         className="navbarcon flex justify-between items-center px-20 py-6 z-40 text-white lg:px-6 fixed w-full"
         style={{ zIndex: 100 }}
       >
-        <h1 className="text-4xl  font-bold ">Adam Simonini</h1>
+        <h1 className="text-4xl  font-bold ">Adam Simoniniqw</h1>
 
         <nav
           className={`flex justify-center items-center gap-x-10 lg:hidden sm:fixed lg:top-0 -z-20 lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0  cursor-pointer`}
