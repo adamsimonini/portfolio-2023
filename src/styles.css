@@ -42,9 +42,6 @@ body {
 }
 
 .card {
-  /* box-shadow: 1px 1px 15px 5px rgba(255, 255, 255, 0.39); */
-  /* border-left: 1px solid white; */
-  /* border-bottom: 10px solid white; */
   background-color: transparent;
   /* border-radius: 10px; */
   padding: 20px 20px;
@@ -57,7 +54,8 @@ body {
   grid-template-areas:
     "image"
     "title"
-    "description" minmax(100px, 500px)
+    "description"
+    /* "description" minmax(100px, 500px) */
     "links";
 }
 
@@ -88,12 +86,6 @@ body {
   padding: 0 15px;
   min-width: 0;
   text-overflow: ellipsis;
-  /* white-space: nowrap; */
-  overflow: hidden;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-
   /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
