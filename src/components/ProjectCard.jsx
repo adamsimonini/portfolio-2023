@@ -36,7 +36,6 @@ function ProjectCard({ project }) {
     <Col xs={12} md={12} lg={6} xl={4} className="card-column">
       <div
         style={{
-          maxWidth: "500px",
           alignItems: "center",
         }}
         className="card card-grid"
@@ -66,18 +65,23 @@ function ProjectCard({ project }) {
         </div>
         {/* </div> */}
         <div style={{ positon: "relative" }} className="card-links">
-          <a href={project.githubLink} target="_blank">
-            <Button primary className="text-2xl br-10 m-1">
-              See the code
-            </Button>
-          </a>
-          <a href={project.liveLink} target="_blank">
-            <Button primary className="text-2xl br-10 m-1">
-              See the app
-            </Button>
-          </a>
+          {project.githubLink && (
+            <a href={project.githubLink} target="_blank">
+              <Button primary className="text-2xl br-10 m-1">
+                See the code
+              </Button>
+            </a>
+          )}
+          {project.liveLink && (
+            <a href={project.liveLink} target="_blank">
+              <Button primary className="text-2xl br-10 m-1">
+                See the app
+              </Button>
+            </a>
+          )}
         </div>
       </div>
+      <div className="white-bottom-border"></div>
     </Col>
   );
 }
