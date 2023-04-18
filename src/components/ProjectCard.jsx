@@ -51,7 +51,7 @@ function ProjectCard({ project }) {
             style={{
               height: "300px",
               borderRadius: "10px",
-              maxWidth: "100%",
+              maxWidth: "350px",
             }}
           />
         </div>
