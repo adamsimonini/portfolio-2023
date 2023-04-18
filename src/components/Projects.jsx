@@ -15,13 +15,11 @@ function Projects() {
         professionally or as a hobby. Please note that all projects are hosted
         for free on Netlify, and as such they might take a few seconds to load.
       </p>
-      <Container>
-        <Row style={{ textAlign: "-webkit-center" }}>
-          {projectData.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </Row>
-      </Container>
+      <Row id="projects-row" style={{ textAlign: "-webkit-center" }}>
+        {projectData.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </Row>
     </section>
   );
 }

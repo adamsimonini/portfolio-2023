@@ -33,7 +33,8 @@ const projects = [
     liveLink: "adamsimonini.ca",
     githubLink: "https://github.com/adamsimonini/portfolio-2023",
     photoName: "adam-simonini",
-    description: "My personal and portfolio website",
+    description:
+      "My personal and portfolio website. It is a custom build inspired by Chillhop music, and the aesthetics of the animated imagery found within the niche music scene.",
   },
   {
     id: 5,
@@ -42,7 +43,8 @@ const projects = [
       "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
     githubLink: "https://github.com/adamsimonini/COVIDTrends",
     photoName: "",
-    description: "Just holding some space for now...",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   },
 ];
 
