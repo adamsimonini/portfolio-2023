@@ -50,7 +50,7 @@ body {
   display: grid;
 
   grid-template-columns: auto;
-  grid-template-rows: 300px 30px 150px 100px;
+  grid-template-rows: 300px 30px minmax(100px, 150px) 100px;
   grid-template-areas:
     "image"
     "title"
@@ -80,13 +80,12 @@ body {
 }
 
 .card-description {
+  height: 100%;
   padding: "20px 0";
   grid-area: description;
   text-align: left;
   padding: 0 15px;
   min-width: 0;
-  text-overflow: ellipsis;
-  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   min-width: 0;
