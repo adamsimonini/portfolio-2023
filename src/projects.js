@@ -38,14 +38,23 @@ const projects = [
   },
   {
     id: 5,
-    name: "Placeholder",
-    liveLink:
-      "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
-    githubLink: "https://github.com/adamsimonini/COVIDTrends",
-    photoName: "",
+    name: "Weather App",
+    liveLink: "https://tvo-weather-app.netlify.app/",
+    githubLink: "https://github.com/adamsimonini/weather-app",
+    photoName: "weather-app",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Built in a day as part of a coding challenge. This weather app takes in a city name, produces a list of up to 5 cities sharing that name, and displays the weather for whichever city from the list is selected",
   },
+  // {
+  //   id: 5,
+  //   name: "Placeholder",
+  //   liveLink:
+  //     "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
+  //   githubLink: "https://github.com/adamsimonini/COVIDTrends",
+  //   photoName: "",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  // },
 ];
 
 export default projects;
