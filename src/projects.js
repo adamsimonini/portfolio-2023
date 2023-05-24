@@ -20,6 +20,24 @@ const projects = [
   },
   {
     id: 3,
+    name: "Weather App",
+    liveLink: "https://tvo-weather-app.netlify.app/",
+    githubLink: "https://github.com/adamsimonini/weather-app",
+    photoName: "weather-app",
+    description:
+      "Built in a day as part of a coding challenge. This weather app takes in a city name, produces a list of up to 5 cities sharing that name, and displays the weather for whichever city from the list is selected. Built with React.js, TypeScript, React MUI, and OpenWeatherAPI",
+  },
+  {
+    id: 4,
+    name: "Companion",
+    liveLink: "https://companion-alpha.netlify.app/",
+    githubLink: "https://github.com/adamsimonini/companion-landing",
+    photoName: "companion",
+    description:
+      "A landing page to familiarize people with Companion - a service to address societal loneliness. One group of users offer their time and attention as a companion for an hourly rate. Another group of users rent their ideal companion. Built with React.js, Tailwind.css, and Next.js",
+  },
+  {
+    id: 5,
     name: "Vue Housing",
     liveLink: "https://vue-housing-prototype.netlify.app",
     githubLink: "https://github.com/adamsimonini/vue-housing",
@@ -28,22 +46,13 @@ const projects = [
       "This app is a prototype for an electronic version of the Ontario's officla Residential Tenancy Agreement form. Written in Vue.js, it utilizes the Vue router and swappable components to dynamically generate form pages.",
   },
   {
-    id: 4,
+    id: 6,
     name: "Personal Website",
     liveLink: "adamsimonini.ca",
     githubLink: "https://github.com/adamsimonini/portfolio-2023",
     photoName: "adam-simonini",
     description:
-      "My personal and portfolio website. It is a custom build inspired by Chillhop music, and the aesthetics of the animated imagery found within the niche music scene.",
-  },
-  {
-    id: 5,
-    name: "Weather App",
-    liveLink: "https://tvo-weather-app.netlify.app/",
-    githubLink: "https://github.com/adamsimonini/weather-app",
-    photoName: "weather-app",
-    description:
-      "Built in a day as part of a coding challenge. This weather app takes in a city name, produces a list of up to 5 cities sharing that name, and displays the weather for whichever city from the list is selected",
+      "My personal and portfolio website. It is a custom build inspired by Chillhop music, and the aesthetics of the animated imagery found within the niche music scene. Built with React.js, and CSS",
   },
   // {
   //   id: 5,
