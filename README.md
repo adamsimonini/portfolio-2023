@@ -63,8 +63,6 @@ Thank you for checkout out my personal portfolio website. It's custom made. I ut
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 - [![React][react.js]][react-url]
 - [![Bootstrap][bootstrap.com]][bootstrap-url]
 - [![Tailwind][tailwind.com]][tailwind-url]
