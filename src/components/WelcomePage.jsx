@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Plane from "@ifos/Plane/Plane.jsx";
-import { planeStyles, planeClassName, PlaneClass } from "@ifos/Plane/script.js";
+import {
+  generateRandomPlane,
+  planeStyles,
+  planeClassName,
+} from "@ifos/Plane/script.js";
 import AudioPlayer from "@components/AudioPlayer/AudioPlayer";
 import styled from "styled-components";
 
@@ -22,42 +26,16 @@ const Button = styled.button`
 `;
 
 function WelcomePage() {
-  const newPlane = new PlaneClass({
-    // todo, consider moving randomization into the PlaneClass itself
-    name: "plane",
-    direction:
-      PlaneClass.directions[
-        Math.floor(Math.random() * PlaneClass.directions.length)
-      ],
-    speed: Math.floor(
-      Math.random() *
-        (PlaneClass.maxFlightTime - PlaneClass.minFlightTime + 1) +
-        PlaneClass.minFlightTime
-    ),
-  });
-  const [planesArrState, setPlanesArrsState] = useState([newPlane]);
+  const [planes, setPlanes] = useState([]);
 
-  // TODO: this is not a reliable way of solving the infinite plane component issue. I would rather have each plane instance itself decide for itself when it should be destroyed, and then have it execute that logic itself
   useEffect(() => {
-    // setTimeout(() => {
-    //   setPlanesArrsState([]);
-    //   const newPlane = new PlaneClass({
-    //     // todo, consider moving randomization into the PlaneClass itself
-    //     name: "plane",
-    //     direction:
-    //       PlaneClass.directions[
-    //         Math.floor(Math.random() * PlaneClass.directions.length)
-    //       ],
-    //     speed: Math.floor(
-    //       Math.random() *
-    //         (PlaneClass.maxFlightTime - PlaneClass.minFlightTime + 1) +
-    //         PlaneClass.minFlightTime
-    //     ),
-    //   });
-    //   newPlane.width = `${Math.floor(3000 / newPlane.speed)}px`;
-    //   setPlanesArrsState([...planesArrState, newPlane]);
-    // }, 25000);
-  });
+    const interval = setInterval(() => {
+      const newPlane = generateRandomPlane();
+      setPlanes((prevPlanes) => [...prevPlanes, newPlane]);
+    }, Math.random() * 3000 + 2000); // Random interval between 2 and 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -70,7 +48,6 @@ function WelcomePage() {
         <main className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
           <section className="bio content">
             <div id="bio-inner">
-              {/* <h1 className="text-5xl font-bold">Welcome</h1> */}
               <p className="py-4 max-w-lg">
                 I'm a full stack developer working out of my hometown of
                 Toronto, Canada. I have been coding for 6+ years, and I'm most
@@ -84,19 +61,19 @@ function WelcomePage() {
                   Find me on GitHub{" "}
                   <i className="fa-solid fa-external-link text-lg  p-[2px] "></i>{" "}
                 </Button>
-                {/* Test of glowing button */}
-                {/* <dvi class="glowing-btn">Hello</dvi> */}
               </a>
             </div>
           </section>
-          {planesArrState.map((plane, i) => (
-            <div key={i}>
-              <Plane
-                planeClassName={planeClassName(plane)}
-                planeStyles={planeStyles(plane)}
-              />
-            </div>
-          ))}
+          <section className="planes">
+            {planes.map((plane, i) => (
+              <div key={i}>
+                <Plane
+                  planeClassName={planeClassName(plane)}
+                  planeStyles={planeStyles(plane)}
+                />
+              </div>
+            ))}
+          </section>
         </main>
         <AudioPlayer />
       </div>

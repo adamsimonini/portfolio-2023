@@ -20,24 +20,27 @@ class PlaneClass {
   static maxFlightTime = 35;
 }
 
-// flight times are in seconds
-const minFlightTime = 10;
-const maxFlightTime = 25;
-const directions = ["right", "left"];
+const generateRandomPlane = () => {
+  const directions = ["right", "left"];
+  const speed = Math.random() * (25 - 10) + 10; // Random speed between 10 and 25
+  const size = 1000 / speed; // Inverse relationship between size and speed
+  const direction = directions[Math.floor(Math.random() * directions.length)];
 
-// since the speed should be affected by distance via motion parallax, and quicker speeds are a lower number (number of seconds it takes for the plane to travel a given route), we have to divide the speed from a standard number, to make bigger objects faster and smaller objects slower
-// planeVariables.size = `${2000 / planeVariables.speed}px`;
-const planeStyles = (plane) => {
-  return {
-    animationName: `fly-${plane.direction}`,
-    animationIterationCount: 1,
-    animationDuration: `${plane.speed}s`,
-    width: `${plane.width}`,
-  };
+  return new PlaneClass({
+    direction,
+    speed,
+    size,
+    width: `${size}px`,
+  });
 };
 
-const planeClassName = (plane) => {
-  return `image plane plane-${plane.direction} flex`;
-};
+const planeStyles = (plane) => ({
+  animationName: `fly-${plane.direction}`,
+  animationIterationCount: 1,
+  animationDuration: `${plane.speed}s`,
+  width: `${plane.width}`,
+});
 
-export { planeStyles, planeClassName, PlaneClass };
+const planeClassName = (plane) => `image plane plane-${plane.direction} flex`;
+
+export { planeStyles, planeClassName, PlaneClass, generateRandomPlane };
