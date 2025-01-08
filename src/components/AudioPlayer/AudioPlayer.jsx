@@ -48,6 +48,9 @@ function Player() {
       onClickNext={handleClickNext}
       onClickPrevious={handleClickBack}
       onEnded={handleEnd}
+      showDownloadProgress={false}
+      showProgressBar={false}
+      showJumpControls={false}
     />
   );
 }

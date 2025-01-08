@@ -345,3 +345,13 @@ body {
     font-size: 1em;
   }
 } */
+
+/* Add styles for small screens */
+@media (max-width: 768px) {
+  /* Adjust the max-width as needed */
+  #bio-text {
+    background-color: black;
+    color: white; /* Ensure text is readable on a black background */
+    padding: 10px; /* Optional: Add some padding for better readability */
+  }
+}

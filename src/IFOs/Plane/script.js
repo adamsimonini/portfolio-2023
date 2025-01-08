@@ -22,7 +22,7 @@ class PlaneClass {
 
 const generateRandomPlane = () => {
   const directions = ["right", "left"];
-  const speed = Math.random() * (25 - 10) + 10; // Random speed between 10 and 25
+  const speed = Math.random() * (50 - 20) + 10; // Random speed between 10 and 25
   const size = 1000 / speed; // Inverse relationship between size and speed
   const direction = directions[Math.floor(Math.random() * directions.length)];
 

@@ -32,7 +32,7 @@ function WelcomePage() {
     const interval = setInterval(() => {
       const newPlane = generateRandomPlane();
       setPlanes((prevPlanes) => [...prevPlanes, newPlane]);
-    }, Math.random() * 3000 + 2000); // Random interval between 2 and 5 seconds
+    }, Math.random() * 5000 + 25000); // Random interval between 2 and 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -48,14 +48,16 @@ function WelcomePage() {
         <main className="wrapper flex justify-between h-screen w-full px-20 lg:px-6">
           <section className="bio content">
             <div id="bio-inner">
-              <p className="py-4 max-w-lg">
-                I'm a full stack developer working out of my hometown of
-                Toronto, Canada. I have been coding for 6+ years, and I'm most
-                familiar with JavaScript and Python.
-              </p>
-              <p className="py-4 max-w-lg">
-                Listen to some chillhop and checkout my portfolio below.
-              </p>
+              <div id="bio-text">
+                <p className="py-4 max-w-lg">
+                  I'm a full stack developer working out of my hometown of
+                  Toronto, Canada. I have been coding for 6+ years, and I'm most
+                  familiar with JavaScript and Python.
+                </p>
+                <p className="py-4 max-w-lg">
+                  Listen to some chillhop and checkout my portfolio below.
+                </p>
+              </div>
               <a href="https://github.com/adamsimonini" target="_blank">
                 <Button primary className="text-2xl">
                   Find me on GitHub{" "}

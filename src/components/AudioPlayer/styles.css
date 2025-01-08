@@ -10,3 +10,31 @@
   position: sticky;
   bottom: 0;
 } */
+
+.rhap_container {
+  --rhap_theme-color: white !important; /* Changes all control colors to white */
+}
+
+.rhap_button-clear {
+  color: white !important; /* Ensures buttons like play/pause are white */
+}
+
+.rhap_progress-bar {
+  background-color: white !important; /* Adjusts the progress bar */
+}
+
+.rhap_progress-indicator {
+  background-color: white !important; /* Adjusts the progress indicator */
+}
+
+.rhap_volume-bar {
+  background-color: white !important; /* Adjusts the volume bar */
+}
+
+.rhap_volume-indicator {
+  background-color: white !important; /* Adjusts the volume indicator */
+}
+
+.rhap_time {
+  color: white !important; /* Ensures time display is white */
+}
