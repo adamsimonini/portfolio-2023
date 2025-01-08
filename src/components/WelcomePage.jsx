@@ -35,8 +35,7 @@ function WelcomePage() {
         id: Date.now() + Math.random(),
       };
       setPlanes((prevPlanes) => [...prevPlanes, newPlane]);
-      // }, Math.random() * 5000 + 25000); // Random interval between 2 and 5 seconds
-    }, Math.random() * 1000 + 1000); // Random interval between 2 and 5 seconds
+    }, Math.random() * 10000 + 5000);
 
     return () => clearInterval(interval);
   }, []);
