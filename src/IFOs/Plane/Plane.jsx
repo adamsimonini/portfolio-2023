@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import PlaneImage from "@images/plane-1.svg";
 import "./styles.css";
 import styled, { css, keyframes } from "styled-components";
+import { planeStyles, planeClassName } from "./script.js";
 
 const flyingKeyframe = keyframes`
   0% {
@@ -23,14 +24,40 @@ const FlightPath = styled.div`
   animation: ${flightAnimation};
 `;
 
-function Plane({ planeClassName, planeStyles }) {
+const PlaneWrapper = styled.div`
+  position: absolute;
+  img {
+    width: 100%;
+  }
+`;
+
+function Plane({ plane, onRemove }) {
+  const planeRef = useRef(null);
+
+  useEffect(() => {
+    const node = planeRef.current;
+    if (!node) return;
+
+    const handleAnimationEnd = () => {
+      onRemove(plane.id);
+    };
+
+    node.addEventListener("animationend", handleAnimationEnd);
+
+    return () => {
+      node.removeEventListener("animationend", handleAnimationEnd);
+    };
+  }, [plane, onRemove]);
+
   return (
-    <FlightPath animationDuration={planeStyles.animationDuration}>
-      <div className={planeClassName} style={planeStyles}>
-        <img className="ast-img" src={PlaneImage} alt="Plane" />
-      </div>
-    </FlightPath>
+    <PlaneWrapper
+      ref={planeRef}
+      className={planeClassName(plane)}
+      style={planeStyles(plane)}
+    >
+      <img src={PlaneImage} alt="Plane" />
+    </PlaneWrapper>
   );
 }
 
-export default React.memo(Plane);
+export default Plane;

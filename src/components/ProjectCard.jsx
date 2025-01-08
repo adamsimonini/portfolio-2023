@@ -4,6 +4,14 @@ import styled from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Col from "react-bootstrap/Col";
 
+const Button = styled.button`
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+`;
+
 function ProjectCard({ project }) {
   const [image, setImage] = useState(null);
 
@@ -21,16 +29,6 @@ function ProjectCard({ project }) {
 
     loadImage();
   }, []);
-
-  const Button = styled.button`
-    background-color: white;
-    color: black;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid black;
-    border-radius: 5px;
-  `;
 
   return (
     <Col xs={12} md={12} lg={6} xl={4} className="card-column">

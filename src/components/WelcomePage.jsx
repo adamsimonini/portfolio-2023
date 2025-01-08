@@ -30,12 +30,22 @@ function WelcomePage() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newPlane = generateRandomPlane();
+      const newPlane = {
+        ...generateRandomPlane(),
+        id: Date.now() + Math.random(),
+      };
       setPlanes((prevPlanes) => [...prevPlanes, newPlane]);
-    }, Math.random() * 5000 + 25000); // Random interval between 2 and 5 seconds
+      // }, Math.random() * 5000 + 25000); // Random interval between 2 and 5 seconds
+    }, Math.random() * 1000 + 1000); // Random interval between 2 and 5 seconds
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleRemovePlane = (planeId) => {
+    setPlanes((prevPlanes) =>
+      prevPlanes.filter((plane) => plane.id !== planeId)
+    );
+  };
 
   return (
     <>
@@ -67,13 +77,12 @@ function WelcomePage() {
             </div>
           </section>
           <section className="planes">
-            {planes.map((plane, i) => (
-              <div key={i}>
-                <Plane
-                  planeClassName={planeClassName(plane)}
-                  planeStyles={planeStyles(plane)}
-                />
-              </div>
+            {planes.map((plane) => (
+              <Plane
+                key={plane.id}
+                plane={plane}
+                onRemove={handleRemovePlane}
+              />
             ))}
           </section>
         </main>
