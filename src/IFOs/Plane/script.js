@@ -1,49 +1,48 @@
-class PlaneClass {
-  constructor({
-    name = "flyer",
-    direction = "left",
-    speed = 10,
-    size = 1,
-    width = "150px",
-  }) {
-    this.name = name;
-    this.direction = direction;
-    this.speed = speed;
-    this.size = size;
-    this.width = width;
-    this.logger = () => {
-      console.log(this);
-    };
-  }
-  static directions = ["right", "left"];
-  static minFlightTime = 10;
-  static maxFlightTime = 35;
-}
+// Plane "physics": one random distance value drives everything, so far planes
+// read as far — smaller, slower across the screen, dimmer, slightly blurred.
+const MIN_SPEED = 22; // seconds to cross, closest plane
+const MAX_SPEED = 65; // seconds to cross, farthest plane
+const MAX_WIDTH = 150; // px, closest plane
+const MIN_WIDTH = 42; // px, farthest plane
 
 const generateRandomPlane = () => {
-  const directions = ["right", "left"];
-  const speed = Math.random() * 50 + 20; // Random speed between 5s and 10s
-  // const speed = Math.random() * (50 - 20) + 10; // Random speed between 10 and 25
-  const size = 1000 / speed; // Inverse relationship between size and speed
-  const startPosition = Math.random() * 80; // Random start position on the y-axis
-  const endPosition = Math.random() * 80; // Random end position on the y-axis
-  const direction = directions[Math.floor(Math.random() * directions.length)];
+  const distance = Math.random(); // 0 = close, 1 = far
+  // Bigger plane = closer = crosses faster; smaller = farther = slower.
+  const speed = MIN_SPEED + distance * (MAX_SPEED - MIN_SPEED);
+  const width = Math.round(MAX_WIDTH - distance * (MAX_WIDTH - MIN_WIDTH));
 
-  return new PlaneClass({
+  // The plane art is drawn nose-up, so every flight climbs: enter low in the
+  // sky band and rise. Steep climbs may exit off the top of the screen before
+  // reaching the far side. No plane ever descends toward the skyline.
+  const startTop = 26 + Math.random() * 26; // 26–52% — low sky, above the ground
+  const climb = 15 + Math.random() * 30; // rise 15–45vh over the crossing
+  const endTop = Math.max(-12, startTop - climb);
+
+  const direction = Math.random() < 0.5 ? "right" : "left";
+
+  return {
     direction,
     speed,
-    size,
-    width: `${size}px`,
-  });
+    width,
+    startTop,
+    endTop,
+    opacity: 1 - distance * 0.45,
+    blur: distance > 0.65 ? 1 : 0,
+    z: Math.round(10 - distance * 9), // near planes pass in front of far ones
+  };
 };
 
 const planeStyles = (plane) => ({
+  width: `${plane.width}px`,
+  opacity: plane.opacity,
+  zIndex: plane.z,
+  filter: plane.blur ? `blur(${plane.blur}px)` : "none",
   animationName: `fly-${plane.direction}`,
-  animationIterationCount: 1,
   animationDuration: `${plane.speed}s`,
-  width: `${plane.width}`,
+  "--start-top": `${plane.startTop}%`,
+  "--end-top": `${plane.endTop}%`,
 });
 
-const planeClassName = (plane) => `image plane plane-${plane.direction} flex`;
+const planeClassName = (plane) => `plane plane-${plane.direction}`;
 
-export { planeStyles, planeClassName, PlaneClass, generateRandomPlane };
+export { planeStyles, planeClassName, generateRandomPlane };

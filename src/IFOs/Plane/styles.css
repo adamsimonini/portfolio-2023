@@ -1,42 +1,38 @@
 .plane {
   position: absolute;
-  left: -300px;
-  max-width: 250px;
-  z-index: 1;
-}
-
-.plane-right {
-  animation-name: fly-left;
-  transform: rotate(-30deg);
+  left: -20%;
+  pointer-events: none;
   animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.plane-left {
-  animation-name: fly-right;
-  transform: scaleX(-1) rotate(-30deg);
-  animation-timing-function: linear;
-}
-
+/* Flight paths read their start/end altitude from per-plane CSS variables
+   (set inline by planeStyles), so every plane crosses the skyline differently. */
 @keyframes fly-right {
-  0% {
-    left: 100%;
-    top: 30%;
+  from {
+    left: -12%;
+    top: var(--start-top, 30%);
   }
-
-  100% {
-    left: -10%;
-    top: 10%;
+  to {
+    left: 102%;
+    top: var(--end-top, 15%);
   }
 }
 
 @keyframes fly-left {
-  0% {
-    left: -10%;
-    top: 10%;
+  from {
+    left: 102%;
+    top: var(--start-top, 30%);
   }
+  to {
+    left: -12%;
+    top: var(--end-top, 15%);
+  }
+}
 
-  100% {
-    left: 100%;
-    top: 55%;
-  }
+/* Base art faces left (and is drawn nose-up — flights always climb to match).
+   Flip for rightward flights. */
+.plane-right {
+  transform: scaleX(-1);
 }

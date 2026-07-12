@@ -1,25 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import projectData from "@/projects";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-
-import "../styles.css";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
   return (
-    <section id="projects" className="project">
-      <h1 className="text-center text-4xl font-bold py-6">Projects</h1>
-      <p className="max-w-[1000px] lg:px-6 mx-auto pr-10 pl-10 mb-10">
-        Here is a sample of some of the projects I have worked on, either
-        professionally or as a hobby. Please note that all projects are hosted
-        for free on Netlify, and as such they might take a few seconds to load.
-      </p>
-      <Row id="projects-row" style={{ textAlign: "-webkit-center" }}>
-        {projectData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </Row>
+    <section id="projects" className="bg-ink-950 px-6 py-24 sm:px-4">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 max-w-2xl">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-3xl">
+            Selected work
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-400">
+            A sample of things I've built, professionally and for fun — from data
+            tools to terminal games. Live demos are hosted on Netlify, so a few
+            may take a moment to spin up.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projectData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,49 +1,62 @@
-import React, { useState } from "react";
-import "../styles.css";
+import React, { useEffect, useState } from "react";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 
 function Navbar() {
-  window.onscroll = function () {
-    scrollFunction();
-  };
+  const [scrolled, setScrolled] = useState(false);
 
-  const [transparency, setTransparency] = useState("bg-transparent");
-
-  // this provides navbar with a black background upon scrolling
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 80 ||
-      document.documentElement.scrollTop > 80
-    ) {
-      document.querySelector(".navbarcon").style.backgroundColor = "#171717";
-    } else {
-      document.querySelector(".navbarcon").style.backgroundColor =
-        "rgba(0, 0, 0, 0)";
-      document.querySelector(".tl").style.backgroundColor = "rgba(0, 0, 0, 0)";
-    }
-  }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <>
-      <div
-        className="navbarcon flex justify-between items-center px-20 py-6 z-40 text-white lg:px-6 fixed w-full"
-        style={{ zIndex: 100 }}
-      >
-        <h1 className="text-4xl  font-bold ">Adam Simonini</h1>
-
-        <nav
-          className={`flex justify-center items-center gap-x-10 lg:hidden sm:fixed lg:top-0 -z-20 lg:flex-col lg:w-full lg:bg-[#171717]  lg:h-[450px] lg:left-0  cursor-pointer`}
+    <header
+      className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${
+        scrolled
+          ? "bg-ink-950/80 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-4">
+        <a
+          href="#welcome"
+          className="font-display text-lg font-bold tracking-tight text-white"
         >
-          <div className="icon text-lg flex gap-4 lg:gap-8 lg:my-10">
-            <a href="https://www.linkedin.com/in/adamsimonini/" target="_blank">
-              <i className="fa-brands fa-linkedin border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
+          Adam Simonini
+        </a>
+
+        <nav className="flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#projects" className="hidden transition-colors hover:text-white sm:inline">
+            Projects
+          </a>
+          <a href="#contact" className="hidden transition-colors hover:text-white sm:inline">
+            Contact
+          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/in/adamsimonini/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-300 transition-colors hover:text-accent"
+            >
+              <LinkedinIcon />
             </a>
-            <a href="https://github.com/adamsimonini" target="_blank">
-              <i className="fa-brands fa-github border-[1px] border-white p-2 rounded-[100%] hover:bg-white hover:text-black"></i>
+            <a
+              href="https://github.com/adamsimonini"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-slate-300 transition-colors hover:text-accent"
+            >
+              <GithubIcon />
             </a>
           </div>
         </nav>
       </div>
-    </>
+    </header>
   );
 }
 

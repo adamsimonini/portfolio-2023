@@ -1,40 +1,57 @@
-.rhap_container {
-  background-color: rgb(17, 28, 47);
-  padding: 0 5%;
-}
-/* .sticky {
-  padding: 20px;
-  text-align: center;
-  background: red;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-} */
-
-.rhap_container {
-  --rhap_theme-color: white !important; /* Changes all control colors to white */
+/* equalizer bars */
+.eq-bar {
+  width: 3px;
+  height: 5px;
+  border-radius: 2px;
+  background: #a78bfa;
+  transition: height 0.2s ease;
 }
 
-.rhap_button-clear {
-  color: white !important; /* Ensures buttons like play/pause are white */
+.eq-playing .eq-bar {
+  animation: eq-bounce 1.1s ease-in-out infinite;
 }
 
-.rhap_progress-bar {
-  background-color: white !important; /* Adjusts the progress bar */
+.eq-playing .eq-bar:nth-child(2) {
+  animation-delay: 0.25s;
 }
 
-.rhap_progress-indicator {
-  background-color: white !important; /* Adjusts the progress indicator */
+.eq-playing .eq-bar:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
-.rhap_volume-bar {
-  background-color: white !important; /* Adjusts the volume bar */
+@keyframes eq-bounce {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 15px;
+  }
 }
 
-.rhap_volume-indicator {
-  background-color: white !important; /* Adjusts the volume indicator */
+/* volume slider */
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
 
-.rhap_time {
-  color: white !important; /* Ensures time display is white */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c4b5fd;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: #c4b5fd;
 }

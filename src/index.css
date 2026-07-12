@@ -2,16 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+@layer base {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-body{
-    /* color: white; */
-}
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
 
-html,body{
+  html,
+  body {
     overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans;
+  }
+
+  ::selection {
+    background: rgba(167, 139, 250, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

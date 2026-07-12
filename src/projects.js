@@ -6,8 +6,9 @@ const projects = [
       "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
     githubLink: "",
     photoName: "covid-trends",
+    tags: ["JavaScript", "Data Viz", "Public Health"],
     description:
-      "COVIDTrends is a tool that provides summary data about COVID‑19 in your area. When you search by municipality (city, town), or by the first 3 characters of your postal code, data from your health region will appear.",
+      "A tool that surfaces summary COVID‑19 data for your area. Search by municipality or the first 3 characters of your postal code to see data from your health region.",
   },
   {
     id: 2,
@@ -15,8 +16,9 @@ const projects = [
     liveLink: "https://replit.com/@ajsim/pokemon-battle",
     githubLink: "https://github.com/adamsimonini/pokemon-battle",
     photoName: "pokemon-battle",
+    tags: ["Python", "CLI", "Game"],
     description:
-      "An interative terminal game written in Python where players choose a team of 3 pokemon and faceoff against a computer opponent. Pokemon speed, attack, and HP stats are randomized by up to 30% (up or down) from base stats on pokemon instantiation, so no two games are alike.",
+      "An interactive terminal game where you pick a team of 3 Pokémon and face off against the computer. Stats are randomized up to 30% on instantiation, so no two games play alike.",
   },
   {
     id: 3,
@@ -24,17 +26,19 @@ const projects = [
     liveLink: "https://vue-housing-prototype.netlify.app",
     githubLink: "https://github.com/adamsimonini/vue-housing",
     photoName: "vue-housing",
+    tags: ["Vue.js", "Vue Router", "Forms"],
     description:
-      "This app is a prototype for an electronic version of the Ontario's officla Residential Tenancy Agreement form. Written in Vue.js, it utilizes the Vue router and swappable components to dynamically generate form pages.",
+      "A prototype for a digital version of Ontario's official Residential Tenancy Agreement. Swappable components and the Vue router dynamically generate the multi-step form.",
   },
   {
     id: 4,
     name: "Personal Website",
-    liveLink: "adamsimonini.ca",
+    liveLink: "https://adamsimonini.ca",
     githubLink: "https://github.com/adamsimonini/portfolio-2023",
     photoName: "adam-simonini",
+    tags: ["React", "Vite", "Tailwind"],
     description:
-      "My personal and portfolio website. It is a custom build inspired by Chillhop music, and the aesthetics of the animated imagery found within the niche music scene.",
+      "This site. A custom build inspired by Chillhop music and the animated imagery of that music scene — including the planes drifting across the hero.",
   },
   {
     id: 5,
@@ -42,19 +46,10 @@ const projects = [
     liveLink: "https://tvo-weather-app.netlify.app/",
     githubLink: "https://github.com/adamsimonini/weather-app",
     photoName: "weather-app",
+    tags: ["JavaScript", "REST API"],
     description:
-      "Built in a day as part of a coding challenge. This weather app takes in a city name, produces a list of up to 5 cities sharing that name, and displays the weather for whichever city from the list is selected",
+      "Built in a day for a coding challenge. Enter a city name, pick from up to 5 matching cities, and see the current weather for whichever you select.",
   },
-  // {
-  //   id: 5,
-  //   name: "Placeholder",
-  //   liveLink:
-  //     "https://covid-trends-phac.netlify.app/index-en.html?HR=1,3551&mapOpen=false",
-  //   githubLink: "https://github.com/adamsimonini/COVIDTrends",
-  //   photoName: "",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  // },
 ];
 
 export default projects;
