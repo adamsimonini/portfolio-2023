@@ -12,7 +12,13 @@ import { GithubIcon, ArrowUpRightIcon } from "./Icons";
 // "coding for N+ years" without hardcoding a number that quietly goes stale.
 const YEARS_CODING = new Date().getFullYear() - 2017;
 
-const ROTATING_WORDS = ["web", "mobile", "blockchain", "everywhere"];
+// "the" reads naturally before web/blockchain but not before mobile/everywhere.
+const ROTATING_WORDS = [
+  { text: "web", article: true },
+  { text: "mobile", article: false },
+  { text: "blockchain", article: true },
+  { text: "everywhere", article: false },
+];
 const WORD_DWELL_MS = 7500; // how long each word holds before swapping
 
 // Cycles through ROTATING_WORDS: slide-up fade out, swap, slide-up fade in.
@@ -57,12 +63,13 @@ function RotatingWord() {
       {/* invisible copies used only for width measurement */}
       {ROTATING_WORDS.map((word, i) => (
         <span
-          key={word}
+          key={word.text}
           ref={(el) => (measureRefs.current[i] = el)}
           className="invisible absolute left-0 top-0"
           aria-hidden="true"
         >
-          {word}
+          {word.article ? "the " : ""}
+          {word.text}
         </span>
       ))}
       <span
@@ -72,7 +79,8 @@ function RotatingWord() {
           phase === "out" ? "animate-word-out" : "animate-word-in"
         }`}
       >
-        {ROTATING_WORDS[index]}
+        {ROTATING_WORDS[index].article ? "the " : ""}
+        {ROTATING_WORDS[index].text}
       </span>
     </span>
   );
@@ -144,7 +152,7 @@ function WelcomePage() {
         <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-6xl lg:text-7xl">
           Full stack developer
           <br />
-          building for the <RotatingWord />.
+          building for <RotatingWord />.
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
