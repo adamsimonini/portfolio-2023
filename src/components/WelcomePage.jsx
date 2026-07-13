@@ -22,7 +22,7 @@ const ROTATING_WORDS = [
 const WORD_DWELL_MS = 7500; // how long each word holds before swapping
 
 // Cycles through ROTATING_WORDS: slide-up fade out, swap, slide-up fade in.
-// Container width is measured per word so the trailing "." glides over
+// Container width is measured per word so the width transition glides
 // instead of snapping.
 function RotatingWord() {
   const [index, setIndex] = useState(0);
@@ -152,7 +152,7 @@ function WelcomePage() {
         <h1 className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-6xl lg:text-7xl">
           Full stack developer
           <br />
-          building for <RotatingWord />.
+          building for <RotatingWord />
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
